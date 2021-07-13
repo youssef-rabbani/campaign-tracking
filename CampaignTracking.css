@@ -653,7 +653,22 @@ color:black;
     width: 100%;
     height: 100%;
 }
-
+#qv-imp-1 .qv-object{
+    padding: 0 15px 0;
+    background-color: transparent;
+}
+#qv-imp-2 .qv-object{
+    padding: 0 15px 0;
+    background-color: transparent;
+}
+#qv-imp-3 .qv-object{
+    padding: 0 15px 0;
+    background-color: transparent;
+}
+#qv-imp-4 .qv-object{
+    padding: 0 15px 0;
+    background-color: transparent;
+}
 .qv-object{
     padding: 0 15px 15px;
     background-color: transparent;
