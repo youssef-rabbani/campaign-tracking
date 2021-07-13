@@ -63,7 +63,7 @@ require(["js/qlik"], function (qlik) {
 	app20.getObject('QV-L52','787f9399-2dee-49b4-97f7-11fa06794e17');
 	app20.getObject('QV-L51','a438b467-fb57-4a81-9cb1-8b3aa68c2cfa');
 	app20.getObject('QV-pg2-6','KshNJ');
-	app20.getObject('QV-pg2-5','XCxL');
+	
 	app20.getObject('QV-pg2-4','cGpfppB');
 	app20.getObject('QV-pg2-3','THHDdW');
 	app20.getObject('QV-pg2-2','jnmu');

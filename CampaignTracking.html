@@ -137,18 +137,40 @@
           }
         });
       });
-      $(".nav-pills li a").click(function () {
-        $(this)
-          .parents(".dropdown")
-          .find(".btn")
-          .html($(this).text() + ' <span class="caret"></span>');
-        $(this).parents(".dropdown").find(".btn").val($(this).data("value"));
-      });
       $(document).ready(function () {
-        $("#btnTargets").click();
-        $("#btnDrivers").click();
+        /*START functions to handle dynamic display and dropdowns in page 1*/
+        $("#pg1divs").children().hide();
+        $("#div1").show();
+        $(".dropdown1").change(function () {
+          var selectedDiv = $("#dropdown1").children("option:selected").val();
+          $("#pg1divs").children().hide();
+          $(`#${selectedDiv}`).show();
+        });
       });
-     
+      /*END functions to handle dynamic display and dropdowns in page 1*/
+      /*START functions to handle dynamic display and dropdowns in page 2*/
+      $("#mainDivs").children().hide();
+      $("#cumulative-sourceMarket-impressions").show();
+      $(".criteria").change(function () {
+        var selectedCriteria1 = $("#criteria1")
+          .children("option:selected")
+          .val();
+        var selectedCriteria2 = $("#criteria2")
+          .children("option:selected")
+          .val();
+        var selectedCriteria3 = $("#criteria3")
+          .children("option:selected")
+          .val();
+        var selectedDiv = `${selectedCriteria1}-${selectedCriteria2}-${selectedCriteria3}`;
+        $("#mainDivs").children().hide();
+        $(`#${selectedDiv}`).show();
+      });
+      $(".criteria3link").click(function (e) {
+        $("#criteria3").val(e.target.id);
+        $("#criteria3").change();
+      });
+
+      /*END functions to handle dynamic display and dropdowns in page 2*/
     </script>
   </head>
 
@@ -554,7 +576,7 @@
                     <div class="item bg-dark" style="height: 160px">
                       <div class="row" style="height: 22px; padding: 0px 16px">
                         <div class="col-xs-12 title">
-                          Cost per Interaction SAR
+                          Cost per Engagement SAR
                         </div>
                       </div>
                       <div class="row" style="height: 41px; padding: 0px 16px">
@@ -658,9 +680,7 @@
                           padding: 0px 12px;
                         "
                       >
-                        <div class="col-xs-12 sub-title-3">
-                          consider visiting Saudi for holidays
-                        </div>
+                        <div class="col-xs-12 sub-title-3"></div>
                       </div>
                     </div>
                   </div>
@@ -736,56 +756,29 @@
                               z-index: 10000;
                             "
                           >
-                            <ul class="nav nav-pills nav-stacked">
-                              <li class="dropdown active">
-                                <a
-                                  class="dropdown-toggle"
-                                  data-toggle="dropdown"
-                                  href="#"
-                                  style="
-                                    display: flex;
-                                    align-items: center;
-                                    background: #121c42;
-                                    height: 35px;
-                                    border-radius: 25px;
-                                    border: 1px solid #ffffffa6;
-                                  "
-                                >
-                                  <span> dropdown </span>
-                                  <span class="caret"></span
-                                ></a>
-                                <ul class="dropdown-menu">
-                                  <li class="active">
-                                    <a data-toggle="tab" href="#div1"
-                                      >Source Market</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a data-toggle="tab" href="#div2"
-                                      >Channel</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a
-                                      id="brandToggle"
-                                      data-toggle="tab"
-                                      href="#div3"
-                                      >Brand</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a data-toggle="tab" href="#div4"
-                                      >Campaign</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
+                            <form>
+                              <div>
+                                <select class="dropdown1" id="dropdown1" style="
+                                display: flex;
+                                align-items: center;
+                                background: #121c42;
+                                color: white;
+                                height: 35px;
+                                border-radius: 25px;
+                                border: 1px solid #ffffffa6;
+                              ">
+                                  <option value="div1">Source Market</option>
+                                  <option value="div2">Channel</option>
+                                  <option value="div3">Brand</option>
+                                  <option value="div4">Campaign</option>
+                                </select>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
-                      <div class="tab-content">
-                        <div id="div1" class="tab-pane fade in active">
+                      <div class="pg1divs" id="pg1divs">
+                        <div id="div1">
                           <div class="row">
                             <div class="col-xs-12">
                               <div
@@ -796,7 +789,7 @@
                             </div>
                           </div>
                         </div>
-                        <div id="div2" class="tab-pane fade">
+                        <div id="div2">
                           <div class="row">
                             <div class="col-xs-12">
                               <div
@@ -807,11 +800,7 @@
                             </div>
                           </div>
                         </div>
-                        <div
-                          id="div3"
-                          class="tab-pane fade"
-                          style="position: relative; top: -45px"
-                        >
+                        <div id="div3" style="position: relative; top: -45px">
                           <div class="row">
                             <div class="col-xs-12 title">
                               Brand Equity Drivers
@@ -963,7 +952,7 @@
                             </div>
                           </div>
                         </div>
-                        <div id="div4" class="tab-pane fade">
+                        <div id="div4">
                           <div class="row">
                             <div class="col-xs-12">
                               <div
@@ -979,10 +968,7 @@
                   </qliksense-card>
                 </div>
               </div>
-              <div class="FooterCaption">
-                * Confidential data / Sources: Campaign Analytics, Saudi Health
-                Tracker
-              </div>
+              <div class="FooterCaption"></div>
             </div>
 
             <div class="paper-body" id="pg2">
@@ -1119,7 +1105,7 @@
                         <div class="col-xs-6" style="height: 100%">
                           <div
                             class="with-title qvobject"
-                            style="width: 100%; height: 100%"
+                            style="width: 100%; height: 100%; padding-top: 12px"
                             id="QV-adv-2"
                           ></div>
                         </div>
@@ -1160,7 +1146,7 @@
                         <div class="col-xs-6" style="height: 100%">
                           <div
                             class="with-title qvobject"
-                            style="width: 100%; height: 100%"
+                            style="width: 100%; padding-top: 12px; height: 100%"
                             id="QV-adv-8"
                           ></div>
                         </div>
@@ -1181,12 +1167,21 @@
                   </div>
                   <div class="col-xs-12 col-md-4">
                     <div class="item bg-dark" style="height: 100px">
-                      <div class="row" style="height: 42px; padding: 0px 16px">
-                        <div class="col-xs-12 title">Positivity</div>
+                      <div class="row" style="height: 25px; padding: 0px 16px">
+                        <div class="col-xs-12 title">App Downloads</div>
                       </div>
-                      <div class="row" style="height: 41px; padding: 0px 16px">
+                      <div
+                        class="row"
+                        style="
+                          display: flex;
+                          height: 35px;
+                          padding: 0px 16px;
+                          align-items: center;
+                        "
+                      >
+                        <div class="col-xs-4 sub-title-3">iOS</div>
                         <div
-                          class="col-xs-6"
+                          class="col-xs-4"
                           style="padding: 0px; height: 100%"
                         >
                           <div
@@ -1195,10 +1190,10 @@
                             id="QV-adv-13"
                           ></div>
                         </div>
-                        <div class="col-xs-6" style="height: 100%">
+                        <div class="col-xs-4" style="height: 100%">
                           <div
                             class="with-title qvobject"
-                            style="width: 100%; height: 100%"
+                            style="padding-top: 12px; width: 100%; height: 100%"
                             id="QV-adv-14"
                           ></div>
                         </div>
@@ -1207,14 +1202,39 @@
                         class="row"
                         style="
                           display: flex;
-                          justify-content: flex-start;
-                          padding: 0px 12px;
+                          height: 35px;
+                          padding: 0px 16px;
+                          align-items: center;
                         "
                       >
+                        <div class="col-xs-4 sub-title-3">Android</div>
+                        <div
+                          class="col-xs-4"
+                          style="padding: 0px; height: 100%"
+                        >
+                          <div
+                            class="with-title qvobject"
+                            style="padding: 0px; width: 100%; height: 100%"
+                            id="QV-adv-13"
+                          ></div>
+                        </div>
+                        <div class="col-xs-4" style="height: 100%">
+                          <div
+                            class="with-title qvobject"
+                            style="padding-top: 12px; width: 100%; height: 100%"
+                            id="QV-adv-14-sub"
+                          ></div>
+                        </div>
+                      </div>
+                      <!--<div class="row" style="
+                          display: flex;
+                          justify-content: flex-start;
+                          padding: 0px 12px;
+                        ">
                         <div class="col-xs-12 sub-title-3">
                           "Sentiment captured on social media"
                         </div>
-                      </div>
+                      </div>-->
                     </div>
                   </div>
                 </div>
@@ -1229,82 +1249,130 @@
                         </div>
                       </div>
 
-                      <div class="row" style="padding-top: 60px">
-                        <div class="row" style="
+                      <div class="row" style="padding-top: 34px">
+                        <div
+                          class="row"
+                          style="
                             display: flex;
 
                             align-content: center;
                             align-items: center;
                             position: relative;
                             left: -204;
-                          ">
+                          "
+                        >
                           <div class="col-xs-7">
-                            <span style="
+                            <span
+                              style="
                                 color: white;
                                 font-size: 15px;
                                 position: relative;
                                 left: 140px;
-                              "></span>
+                              "
+                            ></span>
                           </div>
-                          <div class="col-xs-2" style="width: 13.666667%; text-align: center">
-                            <span style="
+                          <div
+                            class="col-xs-2"
+                            style="width: 13.666667%; text-align: center"
+                          >
+                            <span
+                              style="
                                 color: white;
                                 font-size: 12px;
                                 position: relative;
                                 left: 57px;
                                 top: -34px;
-                              ">vs. Target</span>
+                              "
+                              >vs. Target</span
+                            >
                           </div>
-                          <div class="col-xs-2" style="width: 13.666667%; text-align: center">
-                            <span style="
+                          <div
+                            class="col-xs-2"
+                            style="width: 13.666667%; text-align: center"
+                          >
+                            <span
+                              style="
                                 color: white;
                                 font-size: 12px;
                                 position: relative;
                                 left: 52px;
                                 top: -34px;
-                              ">CPX
-                              <span style="font-style: italic">(SAR)</span></span>
+                              "
+                              >CPX
+                              <span style="font-style: italic"
+                                >(SAR)</span
+                              ></span
+                            >
                           </div>
                         </div>
 
-                        <div class="col-xs-8" style="height: 100%; padding: 0px">
+                        <div
+                          class="col-xs-8"
+                          style="height: 100%; padding: 0px"
+                        >
                           <div class="row">
-                            <div class="col-xs-4" style="
+                            <div
+                              class="col-xs-4"
+                              style="
                                 color: white;
                                 font-size: 12px;
                                 margin-right: 10px;
                                 padding-left: 45px;
                                 padding-top: 20px;
                                 text-align: left;
-                              ">
+                              "
+                            >
                               Impressions
                             </div>
-                            <div class="col-xs-8" style="
+                            <div
+                              class="col-xs-8"
+                              style="
                                 display: flex;
                                 align-items: center;
                                 width: 200px;
                                 height: 55px;
                                 background-color: #6d70b5;
                                 border: 1px solid #6d70b5;
-                              ">
-                              <a data-toggle="tab" href="#main-div1" style="width: 100%; height: 100%;display: flex;align-items: center;justify-content: center;">
-                                <div id="qv-imp-1" class="with-title qvobject" style="height: 37px; width: 101px"></div>
+                              "
+                            >
+                              <a
+                                class="criteria3link"
+                                id="impressions"
+                                href="#"
+                                style="
+                                  width: 100%;
+                                  height: 100%;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                "
+                              >
+                                <div
+                                  id="qv-imp-1"
+                                  class="with-title qvobject"
+                                  style="height: 37px; width: 101px"
+                                ></div>
                               </a>
                             </div>
                           </div>
 
-                          <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-4" style="
+                          <div class="row" style="padding-top: 20px">
+                            <div
+                              class="col-xs-4"
+                              style="
                                 color: white;
                                 font-size: 12px;
                                 margin-right: 10px;
                                 padding-left: 45px;
                                 padding-top: 20px;
                                 text-align: left;
-                              ">
+                              "
+                            >
                               Engagement
                             </div>
-                            <div class="col-xs-8" style="
+                            <div
+                              class="col-xs-8"
+                              style="
                                 display: flex;
                                 align-items: center;
                                 width: 150px;
@@ -1312,25 +1380,46 @@
                                 padding: 0;
                                 background-color: #6d70b5;
                                 border: 1px solid #6d70b5;
-                              ">
-                              <a data-toggle="tab" href="#main-div2" style="width: 100%; height: 100%;display: flex;align-items: center;justify-content: center;">
-                                <div id="qv-imp-2" class="with-title qvobject" style="height: 37px; width: 101px"></div>
+                              "
+                            >
+                              <a
+                                class="criteria3link"
+                                id="engagement"
+                                href="#"
+                                style="
+                                  width: 100%;
+                                  height: 100%;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                "
+                              >
+                                <div
+                                  id="qv-imp-2"
+                                  class="with-title qvobject"
+                                  style="height: 37px; width: 101px"
+                                ></div>
                               </a>
                             </div>
                           </div>
 
                           <div class="row" style="padding-top: 20px">
-                            <div class="col-xs-4" style="
+                            <div
+                              class="col-xs-4"
+                              style="
                                 color: white;
                                 font-size: 12px;
                                 margin-right: 10px;
                                 padding-left: 45px;
                                 padding-top: 20px;
                                 text-align: left;
-                              ">
+                              "
+                            >
                               Web/App Visits
                             </div>
-                            <div class="col-xs-8" style="
+                            <div
+                              class="col-xs-8"
+                              style="
                                 display: flex;
                                 align-items: center;
                                 width: 110px;
@@ -1338,24 +1427,44 @@
                                 padding: 0 10px;
                                 background-color: #6d70b5;
                                 border: 1px solid #6d70b5;
-                              ">
-                            <a data-toggle="tab" href="#main-div3" style="height: 100%;display: flex;align-items: center;justify-content: center;">
-                              <div class="with-title qvobject" id="qv-imp-4" style="height: 40px; width: 101px"></div>
-                            </a>
+                              "
+                            >
+                              <a
+                                class="criteria3link"
+                                id="wav"
+                                href="#"
+                                style="
+                                  height: 100%;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                "
+                              >
+                                <div
+                                  class="with-title qvobject"
+                                  id="qv-imp-4"
+                                  style="height: 40px; width: 101px"
+                                ></div>
+                              </a>
                             </div>
                           </div>
-                          <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-4" style="
+                          <div class="row" style="padding-top: 20px">
+                            <div
+                              class="col-xs-4"
+                              style="
                                 color: white;
                                 font-size: 12px;
                                 margin-right: 10px;
                                 padding-left: 45px;
                                 padding-top: 20px;
                                 text-align: left;
-                              ">
+                              "
+                            >
                               Conversions
                             </div>
-                            <div class="col-xs-8" style="
+                            <div
+                              class="col-xs-8"
+                              style="
                                 display: flex;
                                 align-items: center;
                                 width: 98px;
@@ -1363,111 +1472,182 @@
                                 padding: 0;
                                 background-color: #6d70b5;
                                 border: 1px solid #6d70b5;
-                              ">
-                            <a data-toggle="tab" href="#main-div4" style="height: 100%;display: flex;align-items: center;justify-content: center;">
-                              <div class="with-title qvobject" id="qv-imp-3" style="height: 37px; width: 98px"></div>
+                              "
+                            >
+                              <a
+                                class="criteria3link"
+                                id="conversions"
+                                href="#"
+                                style="
+                                  height: 100%;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                "
+                              >
+                                <div
+                                  class="with-title qvobject"
+                                  id="qv-imp-3"
+                                  style="height: 37px; width: 98px"
+                                ></div>
                               </a>
                             </div>
                           </div>
                         </div>
                         <div class="col-xs-2">
                           <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-12" style="
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -25px;
                                 top: -19px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-26b-a" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-26b-a"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
                           <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-12" style="
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -25px;
                                 top: 2px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-26b-b" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-26b-b"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
                           <div class="row" style="padding-top: 28px">
-                            <div class="col-xs-12" style="
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -25px;
                                 top: 24px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-26b-c" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-26b-c"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
                           <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-12" style="
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -25px;
                                 top: 44px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-26b-d" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-26b-d"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
                         </div>
 
                         <div class="col-xs-2">
                           <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-12" style="
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -11px;
                                 top: -19px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-pg2-cp-1" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-pg2-cp-1"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
                           <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-12" style="
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -11px;
                                 top: 2px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-pg2-cp-2" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-pg2-cp-2"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
-                          <div class="row" style="padding-top: 28px">
-                            <div class="col-xs-12" style="
+                          <div class="row" style="padding-top: 18px">
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -11px;
                                 top: 24px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-pg2-cp-3" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-pg2-cp-3"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
                           <div class="row" style="padding-top: 30px">
-                            <div class="col-xs-12" style="
+                            <div
+                              class="col-xs-12"
+                              style="
                                 padding: 0;
                                 position: relative;
                                 right: -11px;
                                 top: 44px;
                                 height: 32px;
                                 width: 50px;
-                              ">
-                              <div class="with-title qvobject" id="QV-pg2-cp-4" style="height: 45px; width: 83px"></div>
+                              "
+                            >
+                              <div
+                                class="with-title qvobject"
+                                id="QV-pg2-cp-4"
+                                style="height: 45px; width: 83px"
+                              ></div>
                             </div>
                           </div>
                         </div>
@@ -1475,1101 +1655,345 @@
                     </div>
                   </div>
 
-                  <div class="col-xs-12 col-md-8">
+                  <div class="col-xs-12 col-md-8" style="padding: 0 14px 0 0">
                     <div class="item bg-dark" style="height: 510px">
                       <div class="row" style="height: 40px; padding: 0px 16px">
                         <div class="col-xs-12 title">
                           Assessing Performance Stages
                         </div>
                       </div>
-                      <div class="tab-content">
-                        <div class="tab-pane fade in active" id="main-div1">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div class="row">
+                      <form>
+                        <div
+                          class="row margin-bottom"
+                          style="
+                            display: flex;
+                            padding: 0 20px;
+                            justify-content: flex-end;
+                          "
+                        >
+                          <div class="col-xs-2">
+                            <select
+                              class="criteria"
+                              id="criteria1"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                background: #121c42;
+                                color: white;
+                                height: 35px;
+                                border-radius: 25px;
+                                border: 1px solid #ffffffa6;
+                              "
+                            >
+                              <option value="cumulative">Cumulative</option>
+                              <option value="timeSeries">Time Series</option>
+                            </select>
+                          </div>
+                          <div class="col-xs-2">
+                            <select
+                              class="criteria"
+                              id="criteria2"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                background: #121c42;
+                                color: white;
+                                height: 35px;
+                                border-radius: 25px;
+                                border: 1px solid #ffffffa6;
+                              "
+                            >
+                              <option value="sourceMarket">
+                                Source Market
+                              </option>
+                              <option value="channel">Channel</option>
+                              <option value="supplier">Supplier</option>
+                            </select>
+                          </div>
+                          <div hidden="">
+                            <label>Select criteria 3:</label>
+                            <select class="criteria" id="criteria3">
+                              <option value="impressions">Impression</option>
+                              <option value="engagement">Engagement</option>
+                              <option value="wav">Web/App Visits</option>
+                              <option value="conversions">Conversions</option>
+                            </select>
+                          </div>
+                        </div>
+                      </form>
+
+                      <div class="row" style="padding: 0 6px">
+                        <div id="mainDivs" class="col-xs-12 mainDivs">
+                          <div id="cumulative-sourceMarket-impressions">
+                            <div class="row">
+                              <div class="col-xs-12">
                                 <div
-                                  class="col-xs-12"
-                                  style="
-                                    display: flex;
-                                    justify-content: flex-end;
-                                    padding-right: 165px;
-                                  "
-                                >
-                                  <div class="dropdown">
-                                    <ul class="nav nav-pills nav-stacked">
-                                      <li class="dropdown active">
-                                        <a
-                                          class="dropdown-toggle"
-                                          data-toggle="dropdown"
-                                          href="#"
-                                          style="
-                                            display: flex;
-                                            align-items: center;
-                                            background: #121c42;
-                                            height: 35px;
-                                            border-radius: 25px;
-                                            border: 1px solid #ffffffa6;
-                                          "
-                                          >dropdown<span class="caret"></span
-                                        ></a>
-                                        <ul class="dropdown-menu">
-                                          <li class="active">
-                                            <a data-toggle="tab" href="#pg2tab1"
-                                              >Cumulative</a
-                                            >
-                                          </li>
-                                          <li>
-                                            <a data-toggle="tab" href="#pg2tab2"
-                                              >Timeseries</a
-                                            >
-                                          </li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
+                                  class="qvobject"
+                                  id="QV-pg2-1"
+                                  style="height: 393px"
+                                ></div>
                               </div>
-
-                              <div class="tab-content">
+                            </div>
+                          </div>
+                          <div id="cumulative-sourceMarket-engagement">
+                            <div class="row">
+                              <div class="col-xs-12">
                                 <div
-                                  id="pg2tab1"
-                                  class="tab-pane fade in active"
-                                >
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2div1"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2div2"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2div3"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2div1"
-                                      class="tab-pane fade in active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-1"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2div2" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-2"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2div3" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-3"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="pg2tab2" class="tab-pane fade in">
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2div4"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2div5"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2div6"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2div4"
-                                      class="tab-pane fade active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-4"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2div5" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-5"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2div6" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-6"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                  class="qvobject"
+                                  id="QV-pg2-2"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-sourceMarket-wav">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-3"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-sourceMarket-conversions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-4"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-channel-impressions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvplaceholder"
+                                  id="QV-pg2-5"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-channel-engagement">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-6"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-channel-wav">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main2-1"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-channel-conversions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main2-2"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-supplier-impressions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main2-3"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-supplier-engagement">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main2-4"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-supplier-wav">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main2-5"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="cumulative-supplier-conversions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main2-6"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-sourceMarket-impressions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvplaceholder"
+                                  id="QV-pg2-main3-1"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-sourceMarket-engagement">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main3-2"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-sourceMarket-wav">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main3-3"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-sourceMarket-conversions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main3-4"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-channel-impressions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main3-5"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-channel-engagement">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main3-6"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-channel-wav">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main4-1"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-channel-conversions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main4-2"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-supplier-impressions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main4-3"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-supplier-engagement">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main4-4"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-supplier-wav">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main4-5"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="timeSeries-supplier-conversions">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-pg2-main4-6"
+                                  style="height: 393px"
+                                ></div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <!--MAIN DIV 1 END-->
-                        <div class="tab-pane fade" id="main-div2">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div class="row">
-                                <div
-                                  class="col-xs-12"
-                                  style="
-                                    display: flex;
-                                    justify-content: flex-end;
-                                    padding-right: 165px;
-                                  "
-                                >
-                                  <div class="dropdown">
-                                    <ul class="nav nav-pills nav-stacked">
-                                      <li class="dropdown active">
-                                        <a
-                                          class="dropdown-toggle"
-                                          data-toggle="dropdown"
-                                          href="#"
-                                          style="
-                                            display: flex;
-                                            align-items: center;
-                                            background: #121c42;
-                                            height: 35px;
-                                            border-radius: 25px;
-                                            border: 1px solid #ffffffa6;
-                                          "
-                                          >dropdown<span class="caret"></span
-                                        ></a>
-                                        <ul class="dropdown-menu">
-                                          <li class="active">
-                                            <a data-toggle="tab" href="#pg2-main2-tab1"
-                                              >Cumulative</a
-                                            >
-                                          </li>
-                                          <li>
-                                            <a data-toggle="tab" href="#pg2-main2-tab2"
-                                              >Timeseries</a
-                                            >
-                                          </li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="tab-content">
-                                <div
-                                  id="pg2-main2-tab1"
-                                  class="tab-pane fade in active"
-                                >
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main2-div1"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main2-div2"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main2-div3"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2-main2-div1"
-                                      class="tab-pane fade in active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main2-1"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main2-div2" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main2-2"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main2-div3" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main2-3"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="pg2-main2-tab2" class="tab-pane fade in">
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main2-div4"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main2-div5"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main2-div6"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2-main2-div4"
-                                      class="tab-pane fade active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main2-4"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main2-div5" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main2-5"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main2-div6" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main2-6"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!--MAIN DIV 2 END-->
-                        <div class="tab-pane fade" id="main-div3">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div class="row">
-                                <div
-                                  class="col-xs-12"
-                                  style="
-                                    display: flex;
-                                    justify-content: flex-end;
-                                    padding-right: 165px;
-                                  "
-                                >
-                                  <div class="dropdown">
-                                    <ul class="nav nav-pills nav-stacked">
-                                      <li class="dropdown active">
-                                        <a
-                                          class="dropdown-toggle"
-                                          data-toggle="dropdown"
-                                          href="#"
-                                          style="
-                                            display: flex;
-                                            align-items: center;
-                                            background: #121c42;
-                                            height: 35px;
-                                            border-radius: 25px;
-                                            border: 1px solid #ffffffa6;
-                                          "
-                                          >dropdown<span class="caret"></span
-                                        ></a>
-                                        <ul class="dropdown-menu">
-                                          <li class="active">
-                                            <a data-toggle="tab" href="#pg2-main3-tab1"
-                                              >Cumulative</a
-                                            >
-                                          </li>
-                                          <li>
-                                            <a data-toggle="tab" href="#pg2-main3-tab2"
-                                              >Timeseries</a
-                                            >
-                                          </li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="tab-content">
-                                <div
-                                  id="pg2-main3-tab1"
-                                  class="tab-pane fade in active"
-                                >
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main3-div1"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main3-div2"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main3-div3"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2-main3-div1"
-                                      class="tab-pane fade in active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main3-1"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main3-div2" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main3-2"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main3-div3" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main3-3"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="pg2-main3-tab2" class="tab-pane fade in">
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main3-div4"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main3-div5"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main3-div6"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2-main3-div4"
-                                      class="tab-pane fade active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main3-4"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main3-div5" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main3-5"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main3-div6" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main3-6"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!--MAIN DIV 3 END-->
-                        <div class="tab-pane fade" id="main-div4">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div class="row">
-                                <div
-                                  class="col-xs-12"
-                                  style="
-                                    display: flex;
-                                    justify-content: flex-end;
-                                    padding-right: 165px;
-                                  "
-                                >
-                                  <div class="dropdown">
-                                    <ul class="nav nav-pills nav-stacked">
-                                      <li class="dropdown active">
-                                        <a
-                                          class="dropdown-toggle"
-                                          data-toggle="dropdown"
-                                          href="#"
-                                          style="
-                                            display: flex;
-                                            align-items: center;
-                                            background: #121c42;
-                                            height: 35px;
-                                            border-radius: 25px;
-                                            border: 1px solid #ffffffa6;
-                                          "
-                                          >dropdown<span class="caret"></span
-                                        ></a>
-                                        <ul class="dropdown-menu">
-                                          <li class="active">
-                                            <a data-toggle="tab" href="#pg2-main4-tab1"
-                                              >Cumulative</a
-                                            >
-                                          </li>
-                                          <li>
-                                            <a data-toggle="tab" href="#pg2-main4-tab2"
-                                              >Timeseries</a
-                                            >
-                                          </li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="tab-content">
-                                <div
-                                  id="pg2-main4-tab1"
-                                  class="tab-pane fade in active"
-                                >
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main4-div1"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main4-div2"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main4-div3"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2-main4-div1"
-                                      class="tab-pane fade in active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main4-1"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main4-div2" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main4-2"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main4-div3" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main4-3"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="pg2-main4-tab2" class="tab-pane fade in">
-                                  <div
-                                    class="row"
-                                    style="
-                                      display: flex;
-                                      justify-content: flex-end;
-                                    "
-                                  >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        position: relative;
-                                        bottom: 34px;
-                                        right: 20px;
-                                      "
-                                    >
-                                      <div
-                                        class="dropdown"
-                                        style="border-radius: 50px"
-                                      >
-                                        <ul class="nav nav-pills nav-stacked">
-                                          <li class="dropdown active">
-                                            <a
-                                              class="dropdown-toggle"
-                                              data-toggle="dropdown"
-                                              href="#"
-                                              style="
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background: #121c42;
-                                                height: 35px;
-                                                border-radius: 25px;
-                                                border: 1px solid #ffffffa6;
-                                              "
-                                            >
-                                              <span> dropdown </span>
-                                              <span class="caret"></span
-                                            ></a>
-                                            <ul class="dropdown-menu">
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main4-div4"
-                                                  >Source Market</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg2-main4-div5"
-                                                  >Channel</a
-                                                >
-                                              </li>
-                                              <li>
-                                                <a
-                                                  data-toggle="tab"
-                                                  href="#pg-main4-div6"
-                                                  >Supplier</a
-                                                >
-                                              </li>
-                                            </ul>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="tab-content">
-                                    <div
-                                      id="pg2-main4-div4"
-                                      class="tab-pane fade active"
-                                    >
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main4-4"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main4-div5" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main4-5"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="pg2-main4-div6" class="tab-pane fade">
-                                      <div class="row">
-                                        <div class="col-xs-12">
-                                          <div
-                                            class="qvobject"
-                                            id="QV-pg2-main4-6"
-                                            style="height: 393px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!--MAIN DIV 4 END-->
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="FooterCaption">
-                * Confidential data / Sources: Voice of Visitors
+                <div class="FooterCaption"></div>
               </div>
             </div>
           </iron-pages>
