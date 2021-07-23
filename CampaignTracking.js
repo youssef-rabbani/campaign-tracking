@@ -488,6 +488,10 @@ require(["js/qlik"], function (qlik) {
 		$("a").click(function() {
 			qlik.resize();
 		});
+		$(".criteria").change(function() {
+			alert("clicked")
+			qlik.resize();
+		});
 		$(".PaperTitleItem").click(function() {
 			qlik.resize();
 		});
