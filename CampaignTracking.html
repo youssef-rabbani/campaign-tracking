@@ -133,19 +133,18 @@
             case "btnPg2":
               $("#pg2").addClass("iron-selected");
               break;
-            
+
             default:
           }
         });
       });
-      
-      function switchPage2(){
-        $(".PaperTitleItem").removeClass("PaperTitleSelectedItem");
-          $(".paper-body").removeClass("iron-selected");
-          $("#btnPg2").addClass("PaperTitleSelectedItem");
-          $("#pg2").addClass("iron-selected");
 
-        }
+      function switchPage2() {
+        $(".PaperTitleItem").removeClass("PaperTitleSelectedItem");
+        $(".paper-body").removeClass("iron-selected");
+        $("#btnPg2").addClass("PaperTitleSelectedItem");
+        $("#pg2").addClass("iron-selected");
+      }
       $(document).ready(function () {
         /*START functions to handle dynamic display and dropdowns in page 1*/
         $("#pg1divs").children().hide();
@@ -155,29 +154,27 @@
           $("#pg1divs").children().hide();
           $(`#${selectedDiv}`).show();
         });
-      
-      /*END functions to handle dynamic display and dropdowns in page 1*/
-      /*START functions to handle dynamic display and dropdowns in page 2*/
-      $("#mainDivs").children().hide();
-      $("#cumulative-sourceMarket-impressions").show();
-      $(".criteria").change(function () {
-        var selectedCriteria1 = $("#criteria1")
-          .children("option:selected")
-          .val();
-        var selectedCriteria2 = $("#criteria2")
-          .children("option:selected")
-          .val();
-        var selectedCriteria3 = $("#criteria3")
-          .children("option:selected")
-          .val();
-       // alert(selectedCriteria3)
 
-        var selectedDiv = `${selectedCriteria1}-${selectedCriteria2}-${selectedCriteria3}`;
+        /*END functions to handle dynamic display and dropdowns in page 1*/
+        /*START functions to handle dynamic display and dropdowns in page 2*/
         $("#mainDivs").children().hide();
-        $(`#${selectedDiv}`).show();
+        $("#cumulative-sourceMarket-impressions").show();
+        $(".criteria").change(function () {
+          var selectedCriteria1 = $("#criteria1")
+            .children("option:selected")
+            .val();
+          var selectedCriteria2 = $("#criteria2")
+            .children("option:selected")
+            .val();
+          var selectedCriteria3 = $("#criteria3")
+            .children("option:selected")
+            .val();
+
+          var selectedDiv = `${selectedCriteria1}-${selectedCriteria2}-${selectedCriteria3}`;
+          $("#mainDivs").children().hide();
+          $(`#${selectedDiv}`).show();
+        });
       });
-      
-    });
       /*END functions to handle dynamic display and dropdowns in page 2*/
     </script>
   </head>
@@ -263,46 +260,109 @@
                 <!-- A .qvplaceholder will become a droppable area in the dev-hub -->
                 <!-- Each .qvplaceholder must have a unique id -->
                 <!-- These .qvplaceholder objects below have an extra class, .kpi, which applies some simple styles intended for kpi objects -->
-                <div
-                  class="row"
-                  style="height: 45px; width: 80%; margin-bottom: 0px"
-                >
-                  <div class="col-xs-12 col-sm-2" style="height: 100%">
-                    <div
-                      id="QV-2-1"
-                      class="with-title qvobject"
-                      style="height: 100%"
-                    ></div>
+                <div class="row" style="width: 80%">
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-2-1"
+                          class="qvobject"
+                          style="height: 35px; padding: 0px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L21"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-12 col-sm-2" style="height: 100%">
-                    <div
-                      id="QV-2-2"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-2-2"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L22"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-12 col-sm-2" style="height: 100%">
-                    <div
-                      id="QV-2-3"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-2-3"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L23"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-12 col-sm-2" style="height: 100%">
-                    <div
-                      id="QV-2-4"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-2-4"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L24"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-12 col-sm-2" style="height: 100%">
-                    <div
-                      id="QV-2-4a"
-                      class="qvplaceholder"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-2-4a"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L25"
+                          class="qvplaceholder"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
                 <div
                   class=""
                   style="
@@ -317,64 +377,9 @@
                 >
                   Refresh Date: 31 May, 2021
                 </div>
-                <div
-                  class="row"
-                  style="height: 21px; width: 80%; margin-bottom: 0px"
-                >
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L21"
-                      class="FilterValues qvobject"
-                      style="height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L22"
-                      class="FilterValues qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L23"
-                      class="FilterValues qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L24"
-                      class="FilterValues qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L25"
-                      class="FilterValues qvplaceholder"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                </div>
 
-                <div class="row margin-bottom" id="kpiInspire">
-                  <div class="col-xs-12 col-md-4">
+                <div class="row" id="kpiInspire">
+                  <div class="col-xs-12 col-md-4 margin-bottom">
                     <div class="item bg-dark" style="height: 160px">
                       <div class="row" style="height: 22px; padding: 0px 16px">
                         <div class="col-xs-12 title">Awareness</div>
@@ -478,7 +483,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-4">
+                  <div class="col-xs-12 col-md-4 margin-bottom">
                     <div class="item bg-dark" style="height: 160px">
                       <div class="row" style="height: 22px; padding: 0px 16px">
                         <div class="col-xs-12 title">Consideration</div>
@@ -581,7 +586,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-4">
+                  <div class="col-xs-12 col-md-4 margin-bottom">
                     <div class="item bg-dark" style="height: 160px">
                       <div class="row" style="height: 22px; padding: 0px 16px">
                         <div class="col-xs-12 title">
@@ -693,291 +698,268 @@
                       </div>
                     </div>
                   </div>
-                  <!--<div class="col-xs-12 col-md-4">
-                  <div class="item bg-dark" style="height: 160px;">
-                    <div class="row" style="height: 25px; padding: 0px 16px">
-                      <div class="col-xs-12 title">Cost per Interaction SAR</div>
-                    </div>
-                    <div class="row" style="height: 41px; padding: 0px 16px">
-                      <div class="col-xs-6" style="height: 100%; padding: 0px">
-                        <div id="QV-2-5-10" class="qvobject" style="height: 100%"></div>
-                      </div>
-                      <div class="col-xs-6" style="height: 100%; padding: 0px">
-                        <div id="QV-2-5-11" class="qvobject" style="height: 100%"></div>
-                      </div>
-                    </div>
-                    <div class="row" style="
-                            display: flex;
-                            justify-content: flex-start;
-                            padding: 0px 12px;
-							position: relative;
-                            top: 77px
-                          ">
-                      <div class="col-xs-12 sub-title-3">
-                        are spent for every interaction with brand content
-                      </div>
-                    </div>
-                  </div>
-                </div>-->
                 </div>
 
                 <div class="row" style="margin-left: 0px; margin-right: 0px">
-                  <qliksense-card content-height="430px">
-                    <div class="card-title qvt-visualization-title">
-                      Understanding Visitor Inspiration
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                      <div style="height: 430px">
-                        <div
-                          class="qvobject"
-                          id="QV-2-8"
-                          style="height: calc(100% - 20px)"
-                        ></div>
-                        <div
-                          style="
-                            height: 20px;
-                            margin-left: 87px;
-                            font-style: italic;
-                            font-size: 12px;
-                          "
-                        >
-                          * Size of the bubble is proportional to the weight of
-                          the source market
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="row">
-                        <div
-                          class="col-xs-12"
-                          style="
-                            display: flex;
-                            justify-content: flex-end;
-                            padding-right: 80px;
-                          "
-                        >
+                  <div class="item bg-dark">
+                    <div class="title">Understanding Visitor Inspiration</div>
+                    <div class="row">
+                      <div class="col-xs-12 col-md-6">
+                        <div style="height: 430px">
                           <div
-                            class="dropdown"
+                            class="qvobject"
+                            id="QV-2-8"
+                            style="height: 410px"
+                          ></div>
+                          <div
                             style="
-                              position: relative;
-                              bottom: 28px;
-                              left: 40px;
-                              z-index: 10000;
+                              height: 20px;
+                              margin-left: 87px;
+                              font-style: italic;
+                              font-size: 12px;
                             "
                           >
-                            <form>
-                              <div>
-                                <select class="dropdown1" id="dropdown1" style="
-                                display: flex;
-                                align-items: center;
-                                background: #121c42;
-                                color: white;
-                                height: 35px;
-                                border-radius: 25px;
-                                border: 1px solid #ffffffa6;
-                              ">
-                                  <option value="div1">Source Market</option>
-                                  <option value="div2">Channel</option>
-                                  <option value="div3">Brand</option>
-                                  <option value="div4">Campaign</option>
-                                </select>
-                              </div>
-                            </form>
+                            * Size of the bubble is proportional to the weight
+                            of the source market
                           </div>
                         </div>
                       </div>
-                      <div class="pg1divs" id="pg1divs">
-                        <div id="div1">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div
-                                class="qvobject"
-                                id="QV-d-1"
-                                style="height: 393px"
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div id="div2">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div
-                                class="qvobject"
-                                id="QV-d-2"
-                                style="height: 393px"
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div id="div3" style="position: relative; top: -45px">
-                          <div class="row">
-                            <div class="col-xs-12 title">
-                              Brand Equity Drivers
-                            </div>
-                          </div>
-                          <div class="row" style="height: 228px">
-                            <div class="col-xs-12">
-                              <div
-                                class="qvobject"
-                                id="QV-d-3"
-                                style="height: 231px"
-                              ></div>
-                            </div>
-                          </div>
+                      <div class="col-xs-12 col-md-6">
+                        <div class="row">
                           <div
-                            class="row"
+                            class="col-xs-12"
                             style="
-                              position: relative;
-                              bottom: 12px;
-                              padding: 0px 5px 0px 186px;
+                              display: flex;
+                              justify-content: flex-end;
+                              padding-right: 80px;
                             "
                           >
-                            <div class="my-legend" style="padding-top: 4px">
-                              <div class="legend-scale">
-                                <ul class="legend-labels">
-                                  <div
-                                    class="row"
+                            <div
+                              class="dropdown"
+                              style="
+                                position: relative;
+                                bottom: 10px;
+                                left: 40px;
+                                z-index: 10000;
+                              "
+                            >
+                              <form>
+                                <div>
+                                  <select
+                                    class="dropdown1"
+                                    id="dropdown1"
                                     style="
                                       display: flex;
-                                      justify-content: space-between;
+                                      align-items: center;
+                                      background: #121c42;
+                                      color: white;
+                                      height: 35px;
+                                      border-radius: 25px;
+                                      border: 1px solid #ffffffa6;
                                     "
                                   >
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        display: flex;
-                                        justify-content: center;
-                                      "
-                                    >
-                                      <li>
-                                        <span
-                                          style="
-                                            background: #db9791;
-                                            color: black;
-                                          "
-                                          >S</span
-                                        >
-                                        <span
-                                          class="LegendTitle"
-                                          style="width: 62px !important"
-                                          >KSA&lt;50</span
-                                        >
-                                      </li>
-                                    </div>
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        display: flex;
-                                        justify-content: center;
-                                      "
-                                    >
-                                      <li>
-                                        <span
-                                          style="background: #db9791"
-                                        ></span>
-                                        <span
-                                          class="LegendTitle"
-                                          style="width: 62px !important"
-                                          >50-80</span
-                                        >
-                                      </li>
-                                    </div>
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        display: flex;
-                                        justify-content: center;
-                                      "
-                                    >
-                                      <li>
-                                        <span
-                                          style="background: #d6d6d5"
-                                        ></span>
-                                        <span
-                                          class="LegendTitle"
-                                          style="width: 62px !important"
-                                          >80-120</span
-                                        >
-                                      </li>
-                                    </div>
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        display: flex;
-                                        justify-content: center;
-                                      "
-                                    >
-                                      <li>
-                                        <span
-                                          style="background: #8bd3aa"
-                                        ></span>
-                                        <span
-                                          class="LegendTitle"
-                                          style="width: 62px !important"
-                                          >120-150</span
-                                        >
-                                      </li>
-                                    </div>
-                                    <div
-                                      class="col-xs-2"
-                                      style="
-                                        display: flex;
-                                        justify-content: center;
-                                      "
-                                    >
-                                      <li>
-                                        <span
-                                          style="
-                                            background: #8bd3aa;
-                                            color: black;
-                                          "
-                                          >S</span
-                                        >
-                                        <span
-                                          class="LegendTitle"
-                                          style="width: 62px !important"
-                                          >KSA&gt;150</span
-                                        >
-                                      </li>
-                                    </div>
-                                  </div>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-xs-12 title">
-                              Barriers to Consider
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <div
-                                class="qvobject"
-                                id="QV-d-4"
-                                style="height: 143px"
-                              ></div>
+                                    <option value="div1">Source Market</option>
+                                    <option value="div2">Channel</option>
+                                    <option value="div3">Brand</option>
+                                    <option value="div4">Campaign</option>
+                                  </select>
+                                </div>
+                              </form>
                             </div>
                           </div>
                         </div>
-                        <div id="div4">
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <a onclick="switchPage2()">
+                        <div class="pg1divs" id="pg1divs">
+                          <div id="div1">
+                            <div class="row">
+                              <div class="col-xs-12">
                                 <div
-                                class="qvobject"
-                                id="QV-d-5"
-                                style="height: 393px"
-                              ></div>
-                              </a>
-                              
+                                  class="qvobject"
+                                  id="QV-d-1"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="div2">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-d-2"
+                                  style="height: 393px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="div3" style="position: relative; top: -45px">
+                            <div class="row" style="padding: 0 12px">
+                              <div class="col-xs-12 title">
+                                Brand Equity Drivers
+                              </div>
+                            </div>
+                            <div class="row" style="height: 228px">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-d-3"
+                                  style="height: 231px"
+                                ></div>
+                              </div>
+                            </div>
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                bottom: 12px;
+                                padding: 0px 5px 0px 186px;
+                              "
+                            >
+                              <div class="my-legend" style="padding-top: 4px">
+                                <div class="legend-scale">
+                                  <ul class="legend-labels">
+                                    <div
+                                      class="row"
+                                      style="
+                                        display: flex;
+                                        justify-content: space-between;
+                                      "
+                                    >
+                                      <div
+                                        class="col-xs-2"
+                                        style="
+                                          display: flex;
+                                          justify-content: center;
+                                        "
+                                      >
+                                        <li>
+                                          <span
+                                            style="
+                                              background: #db9791;
+                                              color: black;
+                                            "
+                                            >S</span
+                                          >
+                                          <span
+                                            class="LegendTitle"
+                                            style="width: 62px !important"
+                                            >KSA&lt;50</span
+                                          >
+                                        </li>
+                                      </div>
+                                      <div
+                                        class="col-xs-2"
+                                        style="
+                                          display: flex;
+                                          justify-content: center;
+                                        "
+                                      >
+                                        <li>
+                                          <span
+                                            style="background: #db9791"
+                                          ></span>
+                                          <span
+                                            class="LegendTitle"
+                                            style="width: 62px !important"
+                                            >50-80</span
+                                          >
+                                        </li>
+                                      </div>
+                                      <div
+                                        class="col-xs-2"
+                                        style="
+                                          display: flex;
+                                          justify-content: center;
+                                        "
+                                      >
+                                        <li>
+                                          <span
+                                            style="background: #d6d6d5"
+                                          ></span>
+                                          <span
+                                            class="LegendTitle"
+                                            style="width: 62px !important"
+                                            >80-120</span
+                                          >
+                                        </li>
+                                      </div>
+                                      <div
+                                        class="col-xs-2"
+                                        style="
+                                          display: flex;
+                                          justify-content: center;
+                                        "
+                                      >
+                                        <li>
+                                          <span
+                                            style="background: #8bd3aa"
+                                          ></span>
+                                          <span
+                                            class="LegendTitle"
+                                            style="width: 62px !important"
+                                            >120-150</span
+                                          >
+                                        </li>
+                                      </div>
+                                      <div
+                                        class="col-xs-2"
+                                        style="
+                                          display: flex;
+                                          justify-content: center;
+                                        "
+                                      >
+                                        <li>
+                                          <span
+                                            style="
+                                              background: #8bd3aa;
+                                              color: black;
+                                            "
+                                            >S</span
+                                          >
+                                          <span
+                                            class="LegendTitle"
+                                            style="width: 62px !important"
+                                            >KSA&gt;150</span
+                                          >
+                                        </li>
+                                      </div>
+                                    </div>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row" style="padding: 0 12px">
+                              <div class="col-xs-12 title">
+                                Barriers to Consider
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div
+                                  class="qvobject"
+                                  id="QV-d-4"
+                                  style="height: 143px"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="div4">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <a onclick="switchPage2()">
+                                  <div
+                                    class="qvobject"
+                                    id="QV-d-5"
+                                    style="height: 393px"
+                                  ></div>
+                                </a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </qliksense-card>
+                  </div>
                 </div>
               </div>
               <div class="FooterCaption"></div>
@@ -986,46 +968,109 @@
             <div class="paper-body" id="pg2">
               <div class="container-fluid">
                 <!--Filters-->
-                <div
-                  class="row"
-                  style="height: 45px; width: 80%; margin: 0px; padding: 0px"
-                >
-                  <div class="col-xs-2" style="padding: 0px; height: 100%">
-                    <div
-                      id="QV-27"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                <div class="row" style="width: 80%">
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-27"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L51"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-2" style="padding: 0px; height: 100%">
-                    <div
-                      id="QV-28"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-28"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L52"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-2" style="padding: 0px; height: 100%">
-                    <div
-                      id="QV-29"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-29"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L53"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-2" style="padding: 0px; height: 100%">
-                    <div
-                      id="QV-30"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-30"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L54"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-xs-2" style="padding: 0px; height: 100%">
-                    <div
-                      id="QV-30aa"
-                      class="qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
+                  <div class="col-xs-12 col-md-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-30aa"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div
+                          id="QV-L55"
+                          class="qvobject"
+                          style="height: 35px"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
                 <div
                   class=""
                   style="
@@ -1040,64 +1085,10 @@
                 >
                   Refresh Date: 31 May, 2021
                 </div>
-                <div
-                  class="row"
-                  style="height: 21px; width: 80%; margin-bottom: 0px"
-                >
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L51"
-                      class="FilterValues qvobject"
-                      style="height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L52"
-                      class="FilterValues qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L53"
-                      class="FilterValues qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L54"
-                      class="FilterValues qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                  <div
-                    class="col-xs-12 col-sm-2"
-                    style="height: 100%; margin-top: -20px"
-                  >
-                    <div
-                      id="QV-L55"
-                      class="FilterValues qvobject"
-                      style="width: 100%; height: 100%"
-                    ></div>
-                  </div>
-                </div>
+
                 <!--kpis-->
-                <div class="row margin-bottom" id="kpiExperience">
-                  <div class="col-xs-12 col-md-4">
+                <div class="row" id="kpiExperience">
+                  <div class="col-xs-12 col-md-4 margin-bottom">
                     <div class="item bg-dark" style="height: 100px">
                       <div class="row" style="height: 42px; padding: 0px 16px">
                         <div class="col-xs-12 title">Total Impressions</div>
@@ -1136,7 +1127,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-4">
+                  <div class="col-xs-12 col-md-4 margin-bottom">
                     <div class="item bg-dark" style="height: 100px">
                       <div class="row" style="height: 42px; padding: 0px 16px">
                         <div class="col-xs-12 title">
@@ -1177,7 +1168,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-xs-12 col-md-4">
+                  <div class="col-xs-12 col-md-4 margin-bottom">
                     <div class="item bg-dark" style="height: 100px">
                       <div class="row" style="height: 25px; padding: 0px 16px">
                         <div class="col-xs-12 title">App Downloads</div>
@@ -1253,7 +1244,7 @@
 
                 <!--Graphs-->
                 <div class="row" style="padding: 0px">
-                  <div class="col-xs-12 col-md-4">
+                  <div class="col-xs-12 col-md-4 margin-bottom">
                     <div class="item bg-dark" style="height: 510px">
                       <div class="row" style="height: 40px; padding: 0px 16px">
                         <div class="col-xs-12 title">
@@ -1668,7 +1659,7 @@
                     </div>
                   </div>
 
-                  <div class="col-xs-12 col-md-8" style="padding: 0 14px 0 0">
+                  <div class="col-xs-12 col-md-8">
                     <div class="item bg-dark" style="height: 510px">
                       <div class="row" style="height: 40px; padding: 0px 16px">
                         <div class="col-xs-12 title">
@@ -1727,10 +1718,18 @@
                           <div hidden>
                             <label>Select criteria 3:</label>
                             <select class="criteria" id="criteria3">
-                              <option value="impressions" id="impressions">Impression</option>
-                              <option value="engagement" id="engagement">Engagement</option>
-                              <option value="wav" id="wav">Web/App Visits</option>
-                              <option value="conversions" id="conversions">Conversions</option>
+                              <option value="impressions" id="impressions">
+                                Impression
+                              </option>
+                              <option value="engagement" id="engagement">
+                                Engagement
+                              </option>
+                              <option value="wav" id="wav">
+                                Web/App Visits
+                              </option>
+                              <option value="conversions" id="conversions">
+                                Conversions
+                              </option>
                             </select>
                           </div>
                         </div>
@@ -1739,16 +1738,17 @@
                       <div class="row" style="padding: 0 6px">
                         <div id="mainDivs" class="col-xs-12 mainDivs">
                           <div id="cumulative-sourceMarket-impressions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Impressions
-                                </span>
+                                <span> Impressions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1762,16 +1762,17 @@
                             </div>
                           </div>
                           <div id="cumulative-sourceMarket-engagement">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Engagement
-                                </span>
+                                <span> Engagement </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1785,16 +1786,17 @@
                             </div>
                           </div>
                           <div id="cumulative-sourceMarket-wav">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Web/App Visits
-                                </span>
+                                <span> Web/App Visits </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1808,16 +1810,17 @@
                             </div>
                           </div>
                           <div id="cumulative-sourceMarket-conversions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Conversions
-                                </span>
+                                <span> Conversions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1831,16 +1834,17 @@
                             </div>
                           </div>
                           <div id="cumulative-channel-impressions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Impressions
-                                </span>
+                                <span> Impressions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1854,16 +1858,17 @@
                             </div>
                           </div>
                           <div id="cumulative-channel-engagement">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Engagement
-                                </span>
+                                <span> Engagement </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1877,15 +1882,17 @@
                             </div>
                           </div>
                           <div id="cumulative-channel-wav">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Web/App Visits                                </span>
+                                <span> Web/App Visits </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1899,16 +1906,17 @@
                             </div>
                           </div>
                           <div id="cumulative-channel-conversions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Conversions
-                                </span>
+                                <span> Conversions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1922,16 +1930,17 @@
                             </div>
                           </div>
                           <div id="cumulative-supplier-impressions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Impressions
-                                </span>
+                                <span> Impressions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1945,16 +1954,17 @@
                             </div>
                           </div>
                           <div id="cumulative-supplier-engagement">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Engagement
-                                </span>
+                                <span> Engagement </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1968,16 +1978,17 @@
                             </div>
                           </div>
                           <div id="cumulative-supplier-wav">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Web/App Visits
-                                </span>
+                                <span> Web/App Visits </span>
                               </div>
                             </div>
                             <div class="row">
@@ -1991,16 +2002,17 @@
                             </div>
                           </div>
                           <div id="cumulative-supplier-conversions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Conversions
-                                </span>
+                                <span> Conversions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2014,16 +2026,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-sourceMarket-impressions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Impressions
-                                </span>
+                                <span> Impressions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2037,16 +2050,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-sourceMarket-engagement">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Engagement
-                                </span>
+                                <span> Engagement </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2060,16 +2074,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-sourceMarket-wav">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Web/App Visits
-                                </span>
+                                <span> Web/App Visits </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2083,16 +2098,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-sourceMarket-conversions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Conversions
-                                </span>
+                                <span> Conversions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2106,16 +2122,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-channel-impressions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Impressions
-                                </span>
+                                <span> Impressions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2129,16 +2146,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-channel-engagement">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Engagement
-                                </span>
+                                <span> Engagement </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2152,16 +2170,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-channel-wav">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Web/App Visits
-                                </span>
+                                <span> Web/App Visits </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2175,16 +2194,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-channel-conversions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Conversions
-                                </span>
+                                <span> Conversions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2198,16 +2218,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-supplier-impressions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Impressions
-                                </span>
+                                <span> Impressions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2221,16 +2242,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-supplier-engagement">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Engagement
-                                </span>
+                                <span> Engagement </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2244,16 +2266,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-supplier-wav">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Web/App Visits
-                                </span>
+                                <span> Web/App Visits </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2267,16 +2290,17 @@
                             </div>
                           </div>
                           <div id="timeSeries-supplier-conversions">
-                            <div class="row"style="
-                            position: relative;
-                            width: 100px;
-                            bottom: 51px;
-                            padding: 0 15px;
-                        ">
+                            <div
+                              class="row"
+                              style="
+                                position: relative;
+                                width: 100px;
+                                bottom: 51px;
+                                padding: 0 15px;
+                              "
+                            >
                               <div class="col-xs-12 title">
-                                <span>
-                                  Conversions
-                                </span>
+                                <span> Conversions </span>
                               </div>
                             </div>
                             <div class="row">
@@ -2297,9 +2321,7 @@
                 <div class="FooterCaption"></div>
               </div>
             </div>
-           
           </iron-pages>
-
         </paper-drawer-panel>
       </paper-header-panel>
     </paper-drawer-panel>
@@ -2372,14 +2394,10 @@
       });
       window.onload = (event) => {
         $(".criteria3link").click(function (e) {
-        //alert(e.target.id)
-        console.log(e.currentTarget.id)
-        $("#criteria3").val(e.currentTarget.id);
-        $("#criteria3").change();
-      });
-        //alert('page is fully loaded');
+          $("#criteria3").val(e.currentTarget.id);
+          $("#criteria3").change();
+        });
       };
-      
     </script>
   </body>
 </html>
