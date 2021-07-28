@@ -12,5 +12,5 @@
 	"dependencies": {
 		"qlik-sense": ">=1.0.x"
 	},
-	"src": "/extensions/CampaignTracking/preview.png"
+	"src": "/extensions/CampaignTrackingResponsive/preview.png"
 }
