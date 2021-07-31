@@ -244,6 +244,23 @@ css_bars_bar.BAR-2{
     width: 100%;
 }
 
+/****************************NAV Bar*******************************/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    background-color: #337ab700;
+}
+.nav-pills>li>a, .nav-pills>li>a:focus, .nav-pills>li>a:hover{
+    background-color: #337ab700;
+}
+.nav>li>a{
+    color: white;
+}
+.nav-pills>li.active>a{
+    border-bottom: 3px solid #f0a859;
+}
+.nav-pills>li>a{
+    border-radius: 0;
+}
+/****************************NAV Bar*******************************/
 
 .paper-toolbar-0 #middleBar.paper-toolbar {
     position: absolute;
