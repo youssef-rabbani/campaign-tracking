@@ -14,45 +14,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta http-equiv="cleartype" content="on" />
-    <!--Polymer stuff -->
-    <script src="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="qliksense-card.html" />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/iron-flex-layout/iron-flex-layout-classes.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/paper-header-panel/paper-header-panel.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/paper-toolbar/paper-toolbar.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/paper-drawer-panel/paper-drawer-panel.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/paper-icon-button/paper-icon-button.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/iron-icons/iron-icons.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/iron-pages/iron-pages.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/paper-menu/paper-menu.html"
-    />
-    <link
-      rel="import"
-      href="https://cdn.rawgit.com/download/polymer-cdn/1.7.0.2/lib/paper-item/paper-item.html"
-    />
+
+   
     <link rel="import" href="polymer-mixins.html" />
     <style is="custom-style" include="iron-flex iron-positioning"></style>
     <style is="custom-style" include="polymer-mixins"></style>
@@ -157,29 +121,20 @@
   </head>
 
   <body class="fullbleed vertical layout">
-    <paper-drawer-panel
-      right-drawer=""
-      force-narrow="true"
-      disable-edge-swipe="true"
-    >
-      
-
-      <paper-header-panel main="">
-          
             <nav class="navbar navbar-inverse bg-dark" style="border: 0;">
                 <!-- Brand and toggle get grouped for better mobile display -->
                
-                <div class="navbar-header" style="display: inline-block; width: 25%;">
+                <div class="navbar-header" style="display: inline-block; width: 12%;">
                   <a class="navbar-brand" href="#" style="padding: 0;">
                     <img alt="Brand" src="1a.PNG" style="height: 100%; width: 100%;">
                   </a>
                   </div>
-                  <!--<div class="navbar-header logo2" style="display: inline-block; width: 12%;">
+                  <div class="navbar-header logo2" style="display: inline-block; width: 12%;">
 
                   <a class="navbar-brand" href="#" style="padding: 0;">
                     <img alt="Brand1" src="1b.PNG" style="height: 100%; width: 100%;">
                   </a>
-                </div>-->
+                </div>
                 <div class="navbar-header" style="float: right;">
                   <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                       <span class="sr-only">Toggle navigation</span>
@@ -1265,7 +1220,7 @@
                       </div>
                       <div class="col-xs-2" style="padding: 0">
                         <div
-                          class="with-title qvobject ctx"
+                          class="with-title qvobject"
                           id="QV-26b-a"
                           style="height: 45px;"
                         ></div>
@@ -1328,14 +1283,14 @@
                       </div>
                       <div class="col-xs-2" style="padding: 0">
                         <div
-                          class="with-title qvobject ctx"
+                          class="with-title qvobject"
                           id="QV-26b-b"
                           style="height: 45px;"
                         ></div>
                       </div>
                       <div class="col-xs-2" style="padding: 0">
                         <div
-                          class="with-title qvobject ctx"
+                          class="with-title qvobject"
                           id="QV-pg2-cp-2"
                           style="height: 45px;"
                         ></div>
@@ -1391,7 +1346,7 @@
                       </div>
                       <div class="col-xs-2" style="padding: 0">
                         <div
-                          class="with-title qvobject ctx"
+                          class="with-title qvobject"
                           id="QV-26b-c"
                           style="height: 45px;"
                         ></div>
@@ -2105,8 +2060,6 @@
             </div>
           </div>
         </div>
-      </paper-header-panel>
-    </paper-drawer-panel>
     <div class="FooterCaption">
       Confidential data, reading from official sources based on HH Survey
       (Refreshed Apr 2021); Dotted line based on Telco data source (unofficial
@@ -2115,11 +2068,6 @@
 
     <script>
       var root = this.root;
-      $(document).ready(function () {
-        $(window).resize(function () {
-          Polymer.updateStyles();
-        });
-      });
       window.onload = (event) => {
         $(".criteria3link").click(function (e) {
           $("#criteria3").val(e.currentTarget.id);
