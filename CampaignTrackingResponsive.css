@@ -623,27 +623,8 @@ color:black;
     width: 100%;
     height: 100%;
 }
-#QV-pg2-cp-1 .qv-object{
-    padding: 0 0 0 10px;
-}
-#QV-26b-b .qv-object{
-    padding: 0 0 0 10px;
-}
-#QV-pg2-cp-2 .qv-object{
-    padding: 0 0 0 10px;
-}
-#QV-26b-c .qv-object{
-    padding: 0 0 0 10px;
-}
-#QV-pg2-cp-3 .qv-object{
-    padding: 0 0 0 10px;
-}
-#QV-26b-d .qv-object{
-    padding: 0 0 0 10px;
-}
-#QV-pg2-cp-4 .qv-object{
-    padding: 0 0 0 10px;
-}
+
+
 #qv-imp-1 .qv-object{
     padding: 0;
     background-color: transparent;
