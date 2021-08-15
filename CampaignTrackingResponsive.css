@@ -51,6 +51,15 @@ padding-bottom:0px;
 padding-bottom:0px;
 }
 
+.text-sm .sn-kpi-value{
+    font-size: 1.2em !important;
+}
+.text-lg .sn-kpi-value {
+    font-size: 2.3rem !important;
+}
+.text-white .sn-kpi .sn-kpi-ellips-text {
+    color: white;
+}
 #pgTourismPerformance .touch-on.qv-pt .cell .value {
     max-height: 30px;
     min-height: 20px;
@@ -374,11 +383,6 @@ css_bars_bar.BAR-2{
 
 
 
-
-
-
-
-
 qliksense-card .card-title{
 color:white;
 }
@@ -397,18 +401,6 @@ color:white;
     background-position-x: 300px;
     background-position-y: 22px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 table.ng-scope {
     border-collapse: separate !important;
@@ -429,12 +421,7 @@ td.cell.ng-scope.null-value.data .value {
 .qv-pt-meta-button {
      display: none !important
 }
-.sn-kpi-value {
-    font-size: 2.3rem !important;
-}
-#QV-2-5-10 .sn-kpi-value{
-	font:35px !important;
-}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -525,9 +512,7 @@ button:active { outline: none !important; }
 button:change { outline: none !important;}
 button.change:hover { outline: none !important;}
 button:focus { outline:0 !important; }
-.sn-kpi .sn-kpi-ellips-text {
-    color: white;
-}
+
 .btn-round {
     border-radius: 18px;
     width: 100px;
