@@ -483,12 +483,24 @@ require(["js/qlik"], function (qlik) {
 	
 	
 	
-	
+	$(document).ready(function () {
+		qlik.resize();
+		$("a").click(function() {
+			qlik.resize();
+		});
+	});
 	
 	$(".btn-round").click(function() {
 			qlik.resize();
-		});
+	});
 		$("a").click(function() {
+			qlik.resize();
+		});
+		$(document).on('change',function(){
+			qlik.resize();
+	   });
+		$("option").click(function() {
+			alert("Triggered")
 			qlik.resize();
 		});
 		$(".criteria").change(function() {

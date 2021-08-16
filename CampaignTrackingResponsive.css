@@ -1,3 +1,9 @@
+div#QV-refresh-1 .qv-object {
+    padding:0;
+    }
+    div#QV-refresh-2 .qv-object {
+    padding:0;
+    }
 /*Devhub stuff*/
 .qvwrapper {
     z-index: 100000 !important;
@@ -773,6 +779,9 @@ color:black;
 }
 
 @media (max-width: 767px) {
+    #pg2div1{
+        margin-bottom: 15px;
+    }
     .buttons.borderbox {
         width: 45px;
     }
