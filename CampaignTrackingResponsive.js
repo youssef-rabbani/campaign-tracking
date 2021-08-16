@@ -499,10 +499,7 @@ require(["js/qlik"], function (qlik) {
 		$(document).on('change',function(){
 			qlik.resize();
 	   });
-		$("option").click(function() {
-			alert("Triggered")
-			qlik.resize();
-		});
+	
 		$(".criteria").change(function() {
 			qlik.resize();
 		});
