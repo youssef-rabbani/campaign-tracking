@@ -276,7 +276,12 @@ css_bars_bar.BAR-2{
     border-bottom: 3px solid #f0a859;
 }
 /****************************NAV Bar*******************************/
-
+@media (min-width: 767px) {
+    .clear-refresh {
+      position: absolute;
+      right: 0px;
+    }
+  }
 .paper-toolbar-0 #middleBar.paper-toolbar {
     position: absolute;
     top: 0;
