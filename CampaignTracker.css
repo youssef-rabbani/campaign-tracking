@@ -261,9 +261,7 @@ css_bars_bar.BAR-2{
 .filter{
     padding: 0;
 }
-.filter-container{
-    padding: 0;
-}
+
 /****************************NAV Bar*******************************/
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
     background-color: #0f1939;
