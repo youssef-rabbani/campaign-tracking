@@ -263,7 +263,6 @@ css_bars_bar.BAR-2{
 }
 .filter-container{
     padding: 0;
-    margin: 0 22px;
 }
 /****************************NAV Bar*******************************/
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
@@ -280,6 +279,11 @@ css_bars_bar.BAR-2{
     .clear-refresh {
       position: absolute;
       right: 0px;
+    }
+  }
+  @media (max-width: 767px) {
+    .navLogo{
+        width: 30% !important;
     }
   }
 .paper-toolbar-0 #middleBar.paper-toolbar {
