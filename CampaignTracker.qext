@@ -1,16 +1,16 @@
 {
-	"type": "mashup",
-	"name": "Campaign Tracker",
-	"description": "Mashup Template",
-	"homepage": "",
-	"author": "Artefact",
-	"version": "1.0.0",
-	"preview": "preview.png",
-	"keywords": "qlik-sense, mashup, dashboard",
-	"license": "",
-	"repository": "",
-	"dependencies": {
-		"qlik-sense": ">=1.0.x"
-	},
-	"src": "/extensions/CampaignTrackingResponsive/preview.png"
+    "type": "mashup",
+    "name": "Campaign Tracker",
+    "description": "Mashup Template",
+    "homepage": "",
+    "author": "Artefact",
+    "version": "1.0.0",
+    "preview": "preview.png",
+    "keywords": "qlik-sense, mashup, dashboard",
+    "license": "",
+    "repository": "",
+    "dependencies": {
+        "qlik-sense": ">=1.0.x"
+    },
+    "src": "/extensions/CampaignTrackingResponsive/preview.png"
 }
